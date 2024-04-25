@@ -1,0 +1,8 @@
+.add-card {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="radio"] {
+  margin-bottom: 15px;
+}

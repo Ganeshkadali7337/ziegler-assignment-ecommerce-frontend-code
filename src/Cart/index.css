@@ -1,0 +1,19 @@
+.checkout {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px;
+}
+
+.portal-main-container2 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+}
