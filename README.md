@@ -52,3 +52,9 @@
 ### Seller Add Product Route:
 
     Seller can add his products to sell by clicking add product button in the seller portal and giving some info like "title, price, actual price, user("prime or non prime"), image" after successfully giving the data the product will added to his portal and buyers can see his products
+
+# Login Credentials For Prime User:
+{
+    "mail" : "ganeshkadali0@gmail.com",
+    password: "gani7337"
+}
