@@ -16,6 +16,11 @@
   margin: auto;
 }
 
+.banner {
+  width: 100%;
+  margin-top: 30px;
+}
+
 .products-container {
   list-style-type: none;
   margin-left: 0px;
@@ -36,4 +41,10 @@
 
 .all-products-heading {
   font-size: 30px;
+}
+
+@media (min-width: 768px) {
+  .banner {
+    width: 600px;
+  }
 }

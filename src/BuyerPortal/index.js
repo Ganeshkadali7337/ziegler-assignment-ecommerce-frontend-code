@@ -2,7 +2,6 @@ import { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import { TailSpin } from "react-loader-spinner";
 import BuyerProductCard from "../BuyerProductCard";
-import Cookies from "js-cookie";
 import axios from "axios";
 import "./index.css";
 import Navbar from "../Navbar";
@@ -12,7 +11,13 @@ const BuyerPortal = () => {
   return <Portal navigate={navigate} />;
 };
 class Portal extends Component {
-  state = { isGetProfile: false, buyerProducts: [], failed: false, errMsg: "" };
+  state = {
+    isGetProfile: false,
+    buyerProducts: [],
+    failed: false,
+    errMsg: "",
+    buyerProfile: [],
+  };
   getProfile = async () => {
     const token = sessionStorage.getItem("jwtToken");
     await axios
@@ -26,6 +31,30 @@ class Portal extends Component {
       )
       .then((res) => {
         this.setState({ isGetProfile: true, buyerProducts: res.data });
+      })
+      .catch((err) => {
+        console.log(err);
+        let error = err.response.status;
+        console.log(error);
+        let msg = error === 400 ? "Un Authorized" : err.response.data;
+        this.setState({
+          isGetProfile: true,
+          failed: true,
+          errMsg: msg,
+        });
+      });
+
+    await axios
+      .get(
+        "https://ziegler-assignment-ecommerce-backend-u524.onrender.com/buyer/getProfile",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        this.setState({ isGetProfile: true, buyerProfile: res.data });
       })
       .catch((err) => {
         console.log(err);
@@ -70,7 +99,9 @@ class Portal extends Component {
   };
 
   render() {
-    const { isGetProfile, failed, errMsg, buyerProducts } = this.state;
+    const { isGetProfile, failed, errMsg, buyerProducts, buyerProfile } =
+      this.state;
+    console.log(buyerProfile.user);
     return (
       <div className="portal-main-container">
         {!isGetProfile ? (
@@ -96,8 +127,16 @@ class Portal extends Component {
               />
             ) : (
               <div>
-                <Navbar />
+                <Navbar user={buyerProfile.user} />
                 <div className="products-main-container">
+                  {buyerProfile.user === "NON PRIME" && (
+                    <img
+                      className="banner"
+                      src="https://res.cloudinary.com/dzjz2ts9c/image/upload/v1714081832/IN-PR-Mob-Slash-Prime_wjyyve.jpg"
+                      alt="banner"
+                    />
+                  )}
+
                   <h1 className="all-products-heading">All Products</h1>
                   <ul className="products-container">
                     {buyerProducts.map((each) => (

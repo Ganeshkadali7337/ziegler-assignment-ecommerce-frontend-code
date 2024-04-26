@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
-import Cookies from "js-cookie";
 import "./index.css";
 
 const SellerNavbar = () => {

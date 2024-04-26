@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Set Up Instructions:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### install dependencies:
 
-## Available Scripts
+    "axios": "^1.6.8",
+    "js-cookie": "^3.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.1.0",
+    "react-loader-spinner": "^6.1.6",
 
-In the project directory, you can run:
+### Set Up Instructions:
 
-### `npm start`
+    run "npm start" to run the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Functionality and Routes:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Home Route:
 
-### `npm test`
+    user can select the role which he was wanted to signup either "seller" or "buyer"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Buyer Begistration Route:
 
-### `npm run build`
+    user can register by giving some data "name, gmail, password, confirm password" as buyer if he is new customer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Buyer Login Route:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    after successfully registered user can log in to his account as buyer by using his credentials "gmail, password"
+    after logging in successfully buyer have only access to the buyer routes and he do not have access to the seller routes if he login as buyer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Buyer Portal Route:
 
-### `npm run eject`
+    after logged in successfully buyer can see his portal where he can see the products if he is a 'PRIME' user he can see both prime deals and non prime deals, if he is a 'NON PRIME' user he can only see the non prime deals and he can add any products available in his portal and he can log out by clicking log out button in the nav bar which takes to the home route to select the roles
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Buyer Cart Route:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    buyer can see his products which he added to his cart and he can remove the product from cart if he wants to.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Seller Begistration Route:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    user can register by giving some data "name, gmail, password, confirm password" as Seller if he is new Seller
 
-## Learn More
+### Seller Login Route:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    after successfully registered user can log in to his account as seller by using his credentials "gmail, password"
+    after logging in successfully seller have only access to the seller portal and he do not have access to the buyer routes he can log out by clicking log out button in the nav bar which takes to the home route to select the roles
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Seller Portal Route:
 
-### Code Splitting
+    after logged in successfully seller he has access only to his products which he added to sell in his portal and he can delete his products from database by clicking delete product button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Seller Add Product Route:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Seller can add his products to sell by clicking add product button in the seller portal and giving some info like "title, price, actual price, user("prime or non prime"), image" after successfully giving the data the product will added to his portal and buyers can see his products

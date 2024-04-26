@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate, Navigate, useLocation } from "react-router-dom";
-import Cookies from "js-cookie";
 
 function AuthenticatedUser({ children, user }) {
   const location = useLocation();

@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Cookies from "js-cookie";
 import { TailSpin } from "react-loader-spinner";
 import { useNavigate, Navigate } from "react-router-dom";
 import axios from "axios";

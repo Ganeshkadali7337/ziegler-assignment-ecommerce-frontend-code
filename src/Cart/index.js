@@ -53,7 +53,7 @@ class Portal extends Component {
       .then((res) => {
         console.log(res.data);
         this.setState({ isGetProfile: false }, this.getProfile);
-        alert(res.data);
+        alert("Product Deleted From Cart Successfully.");
       })
       .catch((err) => {
         console.log(err);

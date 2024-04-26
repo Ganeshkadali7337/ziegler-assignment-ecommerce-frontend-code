@@ -2,7 +2,6 @@ import "./index.css";
 
 const BuyerProductCard = (props) => {
   const { data, onAddToCart } = props;
-  console.log(data);
   const { _id, img, name, price, actualPrice, user } = data;
   let change = actualPrice - price;
   let persentage = Math.round((change / actualPrice) * 100);

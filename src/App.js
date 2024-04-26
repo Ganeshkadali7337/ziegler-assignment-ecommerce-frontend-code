@@ -10,6 +10,7 @@ import SellerPortal from "./SellerPortal";
 import Cart from "./Cart";
 import Home from "./Home";
 import AddProduct from "./AddProduct";
+import NotFound from "./NotFound";
 
 import "./App.css";
 
@@ -98,6 +99,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

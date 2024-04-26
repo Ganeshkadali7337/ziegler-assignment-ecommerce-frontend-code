@@ -1,6 +1,6 @@
 .product-container {
   display: flex;
-  height: 200px;
+  height: 220px;
   width: 90%;
   border: 1px solid skyblue;
   border-radius: 10px;
@@ -10,12 +10,15 @@
 }
 
 .img {
-  height: 200px;
-  width: 200px;
+  height: 220px;
+  width: 220px;
 }
 
 .pro-name {
   font-size: 16px;
+  width: 100px;
+  height: 35px;
+  overflow: hidden;
 }
 
 .act-price {

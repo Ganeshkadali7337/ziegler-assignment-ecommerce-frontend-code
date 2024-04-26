@@ -1,10 +1,10 @@
 import { useNavigate, Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
-import Cookies from "js-cookie";
 import "./index.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { user } = props;
   const navigate = useNavigate();
   const onClickLogout = () => {
     sessionStorage.removeItem("jwtToken");
@@ -12,7 +12,12 @@ const Navbar = () => {
   };
   return (
     <div className="nav-container">
-      <FaUser className="profile" />
+      <div>
+        <FaUser className="profile" />
+        {user === "NON PRIME" && (
+          <button className="logout-button">Join Prime</button>
+        )}
+      </div>
       <h1 className="logo">LOGO</h1>
       <div className="log-container">
         <Link to="/buyer/cart" className="cart-link">

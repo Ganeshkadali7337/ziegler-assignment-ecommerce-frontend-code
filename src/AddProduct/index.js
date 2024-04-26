@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 import "./index.css";

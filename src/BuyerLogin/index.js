@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Cookies from "js-cookie";
 import { TailSpin } from "react-loader-spinner";
 import { useNavigate, Navigate } from "react-router-dom";
 import axios from "axios";
@@ -7,8 +6,8 @@ import "./index.css";
 
 const BuyerLogin = () => {
   const navigate = useNavigate();
-  const token = Cookies.get("jwtToken");
-  if (token !== undefined) {
+  const token = sessionStorage.getItem("jwtToken");
+  if (token !== null) {
     return <Navigate to="/buyer/portal" replace />;
   }
   return <Login navigate={navigate} />;
