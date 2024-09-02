@@ -115,7 +115,10 @@ class Add extends Component {
     e.preventDefault();
     console.log("submit");
     const { name, price, actualPrice, user, img } = this.state;
-    if ((name || price || actualPrice || user || img) === "") {
+    if (
+      (name || price || actualPrice || user || img) === "" &&
+      price >= actualPrice
+    ) {
       this.setState({ Msg: "*Please fill all the fields" });
     } else {
       this.setState(

@@ -1,4 +1,3 @@
-import { TailSpin } from "react-loader-spinner";
 import "./index.css";
 
 const SellerProductCard = (props) => {
@@ -16,7 +15,7 @@ const SellerProductCard = (props) => {
         <div className="content">
           <h1 className="pro-name">{name}</h1>
           <p>{price}</p>
-          <p className="act-price">{actualPrice}</p>
+          {price < actualPrice && <p className="act-price">{actualPrice}</p>}
           <span className="user">{user}</span>
 
           <button className="delete-product-btn" onClick={onDeleteProduct}>

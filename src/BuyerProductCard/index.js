@@ -20,8 +20,12 @@ const BuyerProductCard = (props) => {
       </div>
       <div className="title-container">
         <p className="price">Rs {price}</p>
-        <p className="compare-price">{actualPrice}</p>
-        <p className="persentage-off">{persentage}% off</p>
+        {price < actualPrice && <p className="act-price">{actualPrice}</p>}
+        {persentage < 0 ? (
+          <p className="persentage-off">0% off</p>
+        ) : (
+          <p className="persentage-off">{persentage}% off</p>
+        )}
       </div>
       <button className="cart-button" onClick={onClickAddToCart}>
         Add To Cart
